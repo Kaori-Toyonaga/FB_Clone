@@ -3,6 +3,7 @@
 <% @blogs.each do |blog| %>
 <div class="container" class="card" >
   <div class="row" class="card-body">
+    <p class=""><%= link_to '編集', edit_blog_path(blog.id) %></p>
     <p class="card-text"><%= blog.content %></p>
     <p class=""><%= link_to 'もっと見る', blog_path(blog.id) %></p>
   </div>
