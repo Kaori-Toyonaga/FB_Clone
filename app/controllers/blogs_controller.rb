@@ -9,13 +9,17 @@ class BlogsController < ApplicationController
   end
 
   def create
-      @blog = Blog.new(blog_params)
+    @blog = Blog.new(blog_params)
+    if params[:back]
+      render :new
+    else
       if @blog.save
         redirect_to blogs_path
       else
         render :new
       end
     end
+  end
 
   def show
   end
@@ -34,6 +38,11 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     redirect_to blogs_path
+  end
+
+  def confirm
+    @blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
   end
 
   private
