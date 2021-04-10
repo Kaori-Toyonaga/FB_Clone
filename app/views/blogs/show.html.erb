@@ -1,7 +1,13 @@
-<p><%= link_to "ユーザー名", blogs_path %></p>
+<p><%= link_to "ユーザー名", choose_new_or_edit %></p>
 <div class="container" class="card" >
   <div class="row" class="card-body">
     <p class="card-text"><%= @blog.user.name %></p>
     <p class="card-text"><%= @blog.content %></p>
+    <p>
+      <strong>Image:</strong>
+      <%= image_tag @blog.image.url %>
+    </p>
+    <%= link_to 'Edit', edit_blog_path(@blog) %> |
+    <%= link_to 'Back', blogs_path %>
   </div>
 </div>
