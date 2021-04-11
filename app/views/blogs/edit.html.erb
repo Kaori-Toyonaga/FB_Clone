@@ -3,10 +3,12 @@
     <%= form.text_field :content %>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @blog.image.url if @blog.image.present? && @blog.image.url.present? %>
+  </p>
+  <%= link_to 'Edit', edit_blog_path(@blog) %> |
+  <%= link_to 'Back', blogs_path %>
 
   <%= form.submit "保存する" %>
 <% end %>
