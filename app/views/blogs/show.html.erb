@@ -1,10 +1,9 @@
-<p><%= link_to "ユーザー名", choose_new_or_edit %></p>
-<div class="container" class="card" >
-  <div class="row" class="card-body">
-    <p class="card-text"><%= @blog.user.name %></p>
-    <p class="card-text"><%= @blog.content %></p>
-    <p>
-      <strong>Image:</strong>
+<p><%= link_to "ユーザー名", blogs_path %></p>
+<div class="container" >
+  <div class="row">
+    <p class="user_name"><%= @blog.user.name %></p>
+    <p class="content_show"><%= @blog.content %></p>
+    <p class="img">
       <%= image_tag @blog.image.url if @blog.image.present? && @blog.image.url.present? %>
     </p>
   </div>

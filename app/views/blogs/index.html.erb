@@ -1,14 +1,16 @@
-<p>左上にアイコン</p>
-<p><%= link_to 'その気持ち、シェアしよう', new_blog_path %></p>
+<p>左上にロゴ</p>
+<div class="new_content">
+  <p><%= link_to 'その気持ち、シェアしよう', new_blog_path %></p>
+</div>
 <% @blogs.each do |blog| %>
-<div class="container" class="card" >
-  <div class="row" class="card-body">
-    <p class=""><%= link_to '確認', blog_path(blog.id) %></p>
-    <p class=""><%= link_to '編集', edit_blog_path(blog.id) %></p>
-    <p class=""><%= link_to '削除', blog_path(blog.id), method: :delete , data: { confirm: '投稿を削除' } %></p>
-    <p class="card-text"><%= blog.user.name %></p>
-    <p class="card-text"><%= blog.content %></p>
-    <p><%= image_tag(blog.image.url) if blog.image && blog.image.url %></p>
+<div class="container" >
+  <div class="row">
+    <p class="user_name"><%= blog.user.name %></p>
+    <p class="content"><%= blog.content %></p>
+    <p ><%= link_to 'もっと見る', blog_path(blog.id) %></p>
+    <p class="img"><%= image_tag(blog.image.url) if blog.image && blog.image.url %></p>
+    <span class=""><%= link_to '編集', edit_blog_path(blog.id) %></span>
+    <span class=""><%= link_to '削除', blog_path(blog.id), method: :delete , data: { confirm: '投稿を削除' } %></span>
   </div>
 </div>
 <% end %>

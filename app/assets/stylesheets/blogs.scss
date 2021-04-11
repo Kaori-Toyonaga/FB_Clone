@@ -24,3 +24,44 @@ body {
   background: #1178F2;/*背景色*/
   border-radius: 4px;/*角の丸み*/
 }
+
+.container {
+  width: 500px;
+  height: auto;
+  overflow: hidden;
+  color:#2D2D31;
+  margin: auto;
+  padding: 5px;
+  border: solid 1px #D9D7D7;
+}
+
+.row {
+  margin: 5px;
+}
+
+.user_name {
+  font-weight: bold;
+}
+
+.content {
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 480px;
+   height: 20px;
+}
+
+.img {
+   width: auto;
+   height: auto;
+   max-width: 100%;
+   max-height: 100%;
+   text-align: center;
+}
+
+.new_content {
+   width:auto;
+   height: 20px;
+}
