@@ -1,8 +1,10 @@
-<p>logo</p>
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-  <%= f.label :メールアドレス %>
-  <%= f.email_field :email %>
-  <%= f.label :パスワード %>
-  <%= f.password_field :password %>
-  <%= f.submit "ログイン" %>
+  <div class="top">
+    <p>ロゴ画像</p>
+    <p class="label"><%= f.label :メールアドレスを入力 %></p>
+    <p><%= f.email_field :email, class: "text_field" %></p>
+    <p class="label"><%= f.label :パスワードを入力 %></p>
+    <p><%= f.password_field :password, class: "text_field"  %></p>
+    <%= f.submit "ログイン", class: "button" %>
+  </div>
 <% end %>
