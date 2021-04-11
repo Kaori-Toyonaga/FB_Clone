@@ -20,6 +20,8 @@
     <p class="label"><%= f.label :パスワード確認 %></p>
     <p><%= f.password_field :password_confirmation, class: "text_field" %></p>
     <%= f.submit "登録", class: "button" %>
+    <br>
+    <p><%= link_to 'すでにアカウントをお持ちですか？', new_session_path %></p>
   </div>
 
 <% end %>
