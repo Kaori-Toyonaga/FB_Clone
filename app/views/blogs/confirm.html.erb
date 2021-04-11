@@ -1,10 +1,13 @@
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
   <p><%= @blog.content %></p>
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag @blog.image.url %>
-  </p>
+
+  <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
+  <%= form.hidden_field :image_cache %>
   <%= form.submit "保存する" %>
+<% end %>
+
+<%= form_with(model:@blog, url: blogs_path, local:true, method:"get") do |form| %>
+  <%= form.hidden_field :image_cache %>
   <%= form.submit "戻る", name: 'back' %>
 <% end %>
