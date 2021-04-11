@@ -10,13 +10,16 @@
 <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :氏名 %>
-  <%= f.text_field :name %>
-  <%= f.label :メールアドレス %>
-  <%= f.email_field :email %>
-  <%= f.label :パスワード %>
-  <%= f.password_field :password %>
-  <%= f.label :パスワード確認 %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "登録" %>
+  <div class="top">
+    <p class="label"><%= f.label :氏名を入力 %></p>
+    <p><%= f.text_field :name, class: "text_field" %></p>
+    <p class="label"><%= f.label :メールアドレスを入力 %></p>
+    <p><%= f.email_field :email,  class: "text_field" %></p>
+    <p class="label"><%= f.label :パスワードを作成 %></p>
+    <p><%= f.password_field :password,  class: "text_field" %></p>
+    <p class="label"><%= f.label :パスワード確認 %></p>
+    <p><%= f.password_field :password_confirmation, class: "text_field" %></p>
+    <%= f.submit "登録", class: "button" %>
+  </div>
+
 <% end %>
