@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
 
   def top
   end
-   
+
   def index
     @blogs = Blog.all
   end
@@ -51,7 +51,7 @@ class BlogsController < ApplicationController
 
   private
   def blog_params
-    params.require(:blog).permit(:content, :image, :image_cache)
+    params.require(:blog).permit(:content, :image, :image_cache).merge(user_id: current_user.id)
   end
 
   def set_blog

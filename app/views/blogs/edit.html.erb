@@ -1,13 +1,14 @@
 <%= form_with(model: @blog, local: true) do |form| %>
   <div class="content_edit">
-    <%= form.text_field :content %>
+    <%= form.text_area :content %>
   </div>
 
-  <p>
+  <p class="img">
     <%= image_tag @blog.image.url if @blog.image.present? && @blog.image.url.present? %>
   </p>
-  <%= link_to 'Edit', edit_blog_path(@blog) %> |
-  <%= link_to 'Back', blogs_path %>
 
-  <%= form.submit "保存する" %>
+  <div class="link">
+    <%= link_to 'Back', blogs_path %>
+    <%= form.submit "保存する" %>
+  </div>
 <% end %>

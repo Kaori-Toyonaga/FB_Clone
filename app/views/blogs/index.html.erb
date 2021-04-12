@@ -1,7 +1,10 @@
-<p>左上にロゴ</p>
+<%= image_tag 'FBlogo2.png' %>
+
 <div class="new_content">
-  <p><%= link_to 'その気持ち、シェアしよう', new_blog_path %></p>
+  <span>img_icon</span>
+  <span><%= link_to 'その気持ち、シェアしよう', new_blog_path %></span>
 </div>
+
 <% @blogs.each do |blog| %>
 <div class="container" >
   <div class="row">
