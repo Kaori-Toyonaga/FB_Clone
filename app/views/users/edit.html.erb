@@ -1,0 +1,19 @@
+<div class="root">
+  <span><%= link_to "<", blogs_path %></span>
+  <span><%= current_user.name %></span>
+</div>
+
+<%= form_with(model: @user, local: true) do |form| %>
+　<div class="prof">
+    <p class="label"><%= image_tag @user.image.url if @user.image && @user.image.url %></p>
+    <p><%= form.file_field :image %></p>
+    <p class="label"><%= form.label :氏名を編集 %></p>
+    <p><%= form.text_field :name, class: "text_field" %></p>
+    <p class="label"><%= form.label :emailを編集 %></p>
+    <p><%= form.email_field :email, class: "text_field" %>
+    <p class="label"><%= form.label :passwordを変更 %></p>
+    <p><%= form.password_field :password, class: "text_field" %></p>
+    <%= form.submit　"保存", class: "button" %>
+    <br>
+  </div>
+<% end %>
