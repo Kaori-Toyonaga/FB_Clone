@@ -5,5 +5,16 @@
     <p class="img">
       <%= image_tag @blog.image.url if @blog.image.present? && @blog.image.url.present? %>
     </p>
+    <% unless @blog.user_id == current_user.id %>
+      <% if @favorite.present? %>
+        <span class="">
+          <%= link_to 'いいね', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+        </span>
+      <% else %>
+      　<span class="">
+        　<%= link_to 'いいね', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+        </span>
+      <% end %>
+    <% end %>
   </div>
 </div>
