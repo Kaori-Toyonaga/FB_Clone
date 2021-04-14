@@ -12,7 +12,7 @@
     <p class="user_name"><%= blog.user.name %></p>
     <p class="content"><%= blog.content %></p>
     <p ><%= link_to 'もっと見る', blog_path(blog.id) %></p>
-    <p class="img"><%= image_tag(blog.image.url) if blog.image && blog.image.url %></p>
+    <p class="img"><%= image_tag(blog.im@age.url) if blog.image && blog.image.url %></p>
   </div>
 </div>
 <% end %>

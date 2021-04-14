@@ -1,3 +1,10 @@
+<%= image_tag 'FBlogo2.png' %>
+
+<div class="new_content">
+  <span><%= link_to '<', blogs_path %></span>
+  <span><%= @blog.user.name%></span>
+</div>
+
 <div class="container" >
   <div class="row">
     <p class="user_name"><%= @blog.user.name %></p>
