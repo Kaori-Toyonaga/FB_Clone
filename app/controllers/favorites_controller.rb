@@ -8,4 +8,8 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.find_by(id: params[:id]).destroy
     redirect_to blogs_path
   end
+
+  def favorite
+    @favorites = Favorite.all
+  end
 end
