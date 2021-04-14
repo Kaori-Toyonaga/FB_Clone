@@ -1,18 +1,16 @@
 <%= image_tag 'FBlogo2.png' %>
-
-<div class="new_content">
-  <span>img_icon</span>
-  <span><%= link_to 'その気持ち、シェアしよう', new_blog_path %></span>
+<div class="root">
+  <span><%= link_to "<", blogs_path %></span>
+  <span><%= current_user.name %></span>
 </div>
 
 <P>いいね一覧</P>
-<% current_user.favorites.each do |favorite| %>
+<% @favorites.each do |favorite| %>
 <div class="container" >
   <div class="row">
-    <p class="user_name"><%= blog.user.name %></p>
-    <p class="content"><%= blog.content %></p>
-    <p ><%= link_to 'もっと見る', blog_path(blog.id) %></p>
-    <p class="img"><%= image_tag(blog.im@age.url) if blog.image && blog.image.url %></p>
+    <p class="user_name"><%= favorite.blog.user.name %></p>
+    <p class="content"><%= favorite.blog.content %></p>
+    <p class="img"><%= image_tag(favorite.blog.image.url) if favorite.blog.image && favorite.blog.image.url %></p>
   </div>
 </div>
-<% end %>
+<% end  %>
