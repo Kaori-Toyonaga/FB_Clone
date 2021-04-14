@@ -13,8 +13,20 @@
     <p class="content"><%= blog.content %></p>
     <p ><%= link_to 'もっと見る', blog_path(blog.id) %></p>
     <p class="img"><%= image_tag(blog.image.url) if blog.image && blog.image.url %></p>
-    <span class=""><%= link_to '編集', edit_blog_path(blog.id) %></span>
-    <span class=""><%= link_to '削除', blog_path(blog.id), method: :delete , data: { confirm: '投稿を削除' } %></span>
+
+  <% unless blog.user_id == current_user.id %>
+    <% if @favorite.present? %>
+      <%= link_to 'いいね！解除', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to 'いいね！', favorites_path(blog_id: blog.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+  <% end %>
+
+    <% if blog.user_id == current_user.id %>
+      <span class=""><%= link_to '編集', edit_blog_path(blog.id) %></span>
+      <span class=""><%= link_to '削除', blog_path(blog.id), method: :delete , data: { confirm: '投稿を削除' } %></span>
+    <% else %>
+    <% end %>
   </div>
 </div>
 <% end %>

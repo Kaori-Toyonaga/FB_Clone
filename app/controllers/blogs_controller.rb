@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
 
   def new
@@ -30,6 +31,11 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    if @blog.user == current_user
+      render :edit
+    else
+      redirect_to blogs_path
+    end
   end
 
   def update
