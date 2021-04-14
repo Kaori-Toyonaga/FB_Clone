@@ -7,13 +7,9 @@
     </p>
     <% unless @blog.user_id == current_user.id %>
       <% if @favorite.present? %>
-        <span class="">
-          <%= link_to 'いいね', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
-        </span>
+        <%= link_to 'いいね', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
       <% else %>
-      　<span class="">
-        　<%= link_to 'いいね', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
-        </span>
+        <%= link_to 'いいね', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
       <% end %>
     <% end %>
   </div>
