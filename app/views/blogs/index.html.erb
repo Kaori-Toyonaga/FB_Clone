@@ -2,7 +2,7 @@
 
 <div class="new_content">
   <span><%= "<" %></span>
-  <span><%= link_to current_user.name, edit_users_path %></span>
+  <span><%= link_to current_user.name, user_path(current_user.id) %></span>
   <span><%= link_to 'その気持ち、シェアしよう', new_blog_path %></span>
 </div>
 

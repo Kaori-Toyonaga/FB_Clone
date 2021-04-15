@@ -6,7 +6,6 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
-    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
 
   def new

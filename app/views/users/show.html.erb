@@ -1,13 +1,10 @@
 <div class="root">
   <span><%= link_to "<", blogs_path %></span>
   <span><%= current_user.name %></span>
+  <span><%= link_to 'プロフィール編集', edit_user_path %></span>
 </div>
 
-<p>img_background</p>
-<p>img_icon</p>
-
-<div class="new_content">
-  <span>img_icon</span>
+<div class="">
   <span><%= link_to 'その気持ち、シェアしよう', new_blog_path %></span>
 </div>
 

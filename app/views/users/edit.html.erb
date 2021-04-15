@@ -5,6 +5,8 @@
 
 <%= form_with(model: @user, local: true) do |form| %>
 　<div class="prof">
+  　<%= form.label :プロフィール画像 %>
+  　<%= form.file_field :image %>
     <p class="label"><%= form.label :氏名を編集 %></p>
     <p><%= form.text_field :name, class: "text_field" %></p>
     <p class="label"><%= form.label :emailを編集 %></p>
