@@ -40,6 +40,10 @@ body {
   border: solid 1px #D9D7D7;
 }
 
+.container a {
+  text-decoration: none;
+}
+
 .row {
   margin: 5px;
 }
@@ -56,6 +60,13 @@ body {
    white-space: nowrap;
    width: 480px;
    height: 20px;
+   font-size: 10px;
+}
+
+.watch {
+  font-size: 10px;
+  color: #666666;
+  text-align: right;
 }
 
 .img {
@@ -69,6 +80,10 @@ body {
 .new_content {
    width:auto;
    height: 20px;
+}
+
+.new_content a {
+  text-decoration: none;
 }
 
 .content_edit {
