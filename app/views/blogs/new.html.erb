@@ -1,11 +1,23 @@
 <%= form_with(model: @blog, local: true ,url: choose_new_or_edit) do |form| %>
-  <div class="blog_content">
-    <%= form.text_field :content %>
-  </div>
+<table class="menu", align="center">
+  <tr>
+    <td class="menu_left"><%= link_to '×', blogs_path %></td>
+    <td class="menu_center">投稿を作成</td>
+    <td class="menu_right"><%= form.submit "投稿", class: "save_btn" %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.file_field :image %>
-  </div>
+  <tr>
+    <td>
+      <span><%= link_to 'icon', user_path(current_user.id) %></span>
+      <span><font size="2"><%= current_user.name%></font></span>
+    </td>
+  </tr>
+</table>
 
-  <%= form.submit "投稿" %>
+<div class="container" >
+  <div class="row">
+    <P><%= form.text_field :content, :placeholder => "その気持ち、シェアしよう", class: "field" %></P>
+    <p><%= form.file_field :image %></P>
+  </div>
+</div>
 <% end %>

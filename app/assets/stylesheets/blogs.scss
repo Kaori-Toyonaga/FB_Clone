@@ -111,15 +111,12 @@ body {
   font-weight: bold;
 }
 
-.content {
-   overflow-wrap: break-word;
-   word-wrap: break-word;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-   width: 480px;
-   height: 20px;
-   font-size: 12px;
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 12px;
 }
 
 .watch {
@@ -153,4 +150,13 @@ body {
 .root {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.field {
+  vertical-align:top;
+  width: 100%;             /* 横幅いっぱいにする */
+  box-sizing: border-box;  /* ※これがないと横にはみ出る */
+  height: 120px;
+  font-size: 12px;
+  border: solid 0px;
 }
