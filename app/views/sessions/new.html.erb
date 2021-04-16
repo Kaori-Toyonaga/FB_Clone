@@ -1,10 +1,8 @@
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-  <div class="top">
+  <div class="top"><font size="2">
     <%= image_tag 'FBlogo_login.png', size: "30x30" %>
-    <p class="label"><%= f.label :メールアドレスを入力 %></p>
-    <p><%= f.email_field :email, class: "text_field" %></p>
-    <p class="label"><%= f.label :パスワードを入力 %></p>
-    <p><%= f.password_field :password, class: "text_field"  %></p>
-    <%= f.submit "ログイン", class: "button" %>
-  </div>
+    <P><%= f.email_field :email, :placeholder => "メールアドレス", class: "text_field" %></P>
+    <P><%= f.password_field :password, :placeholder => "パスワード", class: "text_field" %></P>
+    <%= f.submit "ログイン", class: "btn_confirm" %>
+  </font></div>
 <% end %>
