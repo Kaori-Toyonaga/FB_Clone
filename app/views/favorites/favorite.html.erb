@@ -1,15 +1,16 @@
 <%= image_tag 'FBlogo2.png' %>
-<div class="root">
-  <span><%= link_to "<", blogs_path %></span>
-  <span><%= current_user.name %></span>
+
+<div class="link">
+  <span class="user_title"><%= link_to '<', blogs_path %></span>
+  <span class="user_title"><%= current_user.name %></span>
 </div>
 
-<P>いいね一覧</P>
+<P class="menu_center">いいね一覧</P>
 <% @favorites.each do |favorite| %>
 <div class="container" >
   <div class="row">
     <p class="user_name"><%= favorite.blog.user.name %></p>
-    <p class="content"><%= favorite.blog.content %></p>
+    <p class="field"><%= favorite.blog.content %></p>
     <p class="img"><%= image_tag(favorite.blog.image.url) if favorite.blog.image && favorite.blog.image.url %></p>
   </div>
 </div>
