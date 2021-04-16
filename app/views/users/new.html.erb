@@ -16,10 +16,26 @@
     <p class="label"><%= f.label :メールアドレスを入力 %></p>
     <p><%= f.email_field :email, :placeholder => "abc@xxx.com", class: "text_field" %></p>
     <p class="label"><%= f.label :パスワードを作成 %></p>
-    <p><%= f.password_field :password, :placeholder => "6桁以上", class: "text_field" %></p>
+    <p><%= f.password_field :password, :placeholder => "6文字以上", class: "text_field" %></p>
     <p class="label"><%= f.label :パスワード確認 %></p>
     <p><%= f.password_field :password_confirmation, :placeholder => "再度入力してください", class: "text_field" %></p>
     <br>
     <%= f.submit "登録", class: "btn_confirm" %>
   </font></div>
+<% end %>
+<br>
+<div class="link">
+  <a><font size="2">
+    <%= link_to 'すでにアカウントをお持ちですか？', new_session_path %>
+  </font></a>
+</div>
+
+<div class="link">
+  <% flash.each do |key, value| %>
+  　<%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
+  <% if logged_in? %>
+    <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+  <% else %>
+  <% end %>
+</div>
