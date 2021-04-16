@@ -22,8 +22,8 @@
   <% end %>
 
     <% if blog.user_id == current_user.id %>
-      <span class=""><%= link_to '編集', edit_blog_path(blog.id) %></span>
-      <span class=""><%= link_to '削除', blog_path(blog.id), method: :delete , data: { confirm: '投稿を削除' } %></span>
+      <span class=""><%= link_to image_tag('edit.png'), edit_blog_path(blog.id) %></span>
+      <span class=""><%= link_to image_tag('delete.png'), blog_path(blog.id), method: :delete , data: { confirm: '投稿を削除' } %></span>
     <% else %>
     <% end %>
   </div>
