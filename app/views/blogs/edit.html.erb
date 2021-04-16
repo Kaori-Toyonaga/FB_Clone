@@ -1,14 +1,17 @@
-<%= form_with(model: @blog, local: true) do |form| %>
-  <div class="content_edit">
-    <%= form.text_area :content %>
-  </div>
+  <%= form_with(model: @blog, local: true) do |form| %>
+  <table class="menu", align="center">
+    <td class="menu_left"><%= link_to '×', blogs_path %></td>
+    <td class="menu_center">投稿を編集</td>
+    <td class="menu_right"><%= form.submit "保存する", class: "save_btn" %></td>
+  </table>
 
-  <p class="img">
-    <%= image_tag @blog.image.url if @blog.image.present? && @blog.image.url.present? %>
-  </p>
+  <div class="container" >
+    <div class="row">
+　    <div>
+      　<p class="edit"><%= form.text_area :content, class: "content_edit" %></p>
+        <p class="img"><%= image_tag @blog.image.url if @blog.image.present? && @blog.image.url.present? %></p>
+  　  </div>
+　  </div>
+ </div>
 
-  <div class="link">
-    <%= link_to 'Back', blogs_path %>
-    <%= form.submit "保存する" %>
-  </div>
-<% end %>
+  <% end %>
