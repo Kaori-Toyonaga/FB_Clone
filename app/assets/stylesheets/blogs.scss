@@ -97,16 +97,6 @@ body {
   text-decoration: none;
 }
 
-.edit {
-  text-align: center;
-}
-
-.content_edit {
-  width: 480px;
-  height: auto;
-  border: solid 0px;
-}
-
 .user_name {
   font-weight: bold;
 }
@@ -156,7 +146,7 @@ body {
   vertical-align:top;
   width: 100%;             /* 横幅いっぱいにする */
   box-sizing: border-box;  /* ※これがないと横にはみ出る */
-  height: 120px;
+  height: 150px;
   font-size: 12px;
   border: solid 0px;
 }
