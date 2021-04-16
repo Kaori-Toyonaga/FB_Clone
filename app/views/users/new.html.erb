@@ -10,18 +10,22 @@
 <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>
-  <div class="top">
+  <div class="top"><font size="2">
     <p class="label"><%= f.label :氏名を入力 %></p>
-    <p><%= f.text_field :name, class: "text_field" %></p>
+    <p>
+      <%= f.text_field :name, :placeholder => "姓　名", class: "text_field" %>
+    </p>
     <p class="label"><%= f.label :メールアドレスを入力 %></p>
-    <p><%= f.email_field :email,  class: "text_field" %></p>
+    <p>
+      <%= f.email_field :email, :placeholder => "abc@xxx.com", class: "text_field" %>
+    </p>
     <p class="label"><%= f.label :パスワードを作成 %></p>
-    <p><%= f.password_field :password,  class: "text_field" %></p>
+    <p>
+      <%= f.password_field :password, :placeholder => "6桁以上", class: "text_field" %>
+    </p>
     <p class="label"><%= f.label :パスワード確認 %></p>
-    <p><%= f.password_field :password_confirmation, class: "text_field" %></p>
-    <%= f.submit "登録", class: "button" %>
+    <p><%= f.password_field :password_confirmation, :placeholder => "再度入力してください", class: "text_field" %></p>
     <br>
-    <p><%= link_to 'すでにアカウントをお持ちですか？', new_session_path %></p>
-  </div>
-
-<% end %>
+    <%= f.submit "登録", class: "btn_confirm" %>
+  </font></div>
+  <% end %>

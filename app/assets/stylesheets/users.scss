@@ -3,18 +3,19 @@
 }
 
 .label {
-  text-align: center;
   color: #1178F2;
-  font-size: 1rem;
+  font-weight: bold;
 }
 
 .text_field {
-  text-align: center;
   border-radius: 4px;
-  color: #757575;
+  border: 1px solid #666666;
+  width: 20em;
+  height: 1.5rem;
+  padding-left: 0.5rem
 }
 
-.button {
+.btn_confirm {
   text-decoration: none;
   text-align: center;
   position: relative;
@@ -23,4 +24,6 @@
   color: #FFF;
   background: #1178F2;/*背景色*/
   border-radius: 4px;/*角の丸み*/
+  border: 0px
+
 }
