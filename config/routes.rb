@@ -7,9 +7,5 @@ Rails.application.routes.draw do
       get '/top', to: 'blogs#top'
     end
   end
-  resources :favorites, only: [:create, :destroy] do
-    collection do
-      get :favorite
-    end
-  end
+  resources :favorites, only: [:index, :create, :destroy]
 end

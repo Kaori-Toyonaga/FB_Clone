@@ -1,16 +1,19 @@
 class FavoritesController < ApplicationController
+
   def create
+    @blog = Blog.find(params[:blog_id])
     favorite = current_user.favorites.create(blog_id: params[:blog_id])
-    redirect_to blogs_path, notice: "いいね！しました"
+    redirect_to blog_path(@blog), notice: "いいね！しました"
   end
 
   def destroy
-    favorite = current_user.favorites.find_by(id: params[:id]).destroy
-    redirect_to blogs_path
+    @blog = Blog.find(params[:id])
+    favorites = current_user.favorites.find_by(blog_id: @blog).destroy
+    redirect_to blog_path(@blog)
   end
 
-  def favorite
-    @user = current_user
-    @favorites = Favorite.where(user_id: @user.id).all
+  def index
+    @favorites = Favorite.where(user_id: current_user.id).all
   end
+
 end
