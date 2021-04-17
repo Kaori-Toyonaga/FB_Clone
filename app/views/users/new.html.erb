@@ -19,16 +19,17 @@
     <p><%= f.password_field :password, :placeholder => "6文字以上", class: "text_field" %></p>
     <p class="label"><%= f.label :パスワード確認 %></p>
     <p><%= f.password_field :password_confirmation, :placeholder => "再度入力してください", class: "text_field" %></p>
+    <p class="label"><%= f.label :プロフィール写真 %></p>
+    <p><%= f.file_field :image %></p>
+
     <br>
     <%= f.submit "登録", class: "btn_confirm" %>
   </font></div>
 <% end %>
 <br>
-<div class="link">
-  <a><font size="2">
-    <%= link_to 'すでにアカウントをお持ちですか？', new_session_path %>
-  </font></a>
-</div>
+<div class="hooter"><font size="2">
+  <a><%= link_to 'すでにアカウントをお持ちですか？', new_session_path %></a>
+</font></div>
 
 <div class="link">
   <% flash.each do |key, value| %>

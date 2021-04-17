@@ -1,7 +1,7 @@
 <%= image_tag 'FBlogo2.png' %>
 
-<div class="new_content">
-  <span><%= link_to 'icon', user_path(current_user.id) %></span>
+<div class="link">
+  <span><%= link_to current_user.name, user_path(current_user.id) %></span>
   <span><font size="2"><%= link_to 'その気持ち、シェアしよう', new_blog_path %></font></span>
 </div>
 
