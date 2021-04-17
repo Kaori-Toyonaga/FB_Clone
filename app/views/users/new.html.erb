@@ -28,10 +28,11 @@
 <% end %>
 <br>
 <div class="hooter"><font size="2">
-  <a><%= link_to 'すでにアカウントをお持ちですか？', new_session_path %></a>
+  <p><%= link_to 'すでにアカウントをお持ちですか？', new_session_path %></p>
+  <p><%= link_to "top", top_blogs_path %></p>
 </font></div>
 
-<div class="link">
+<div class="hooter"><font size="2">
   <% flash.each do |key, value| %>
   　<%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
