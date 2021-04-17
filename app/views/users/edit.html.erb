@@ -1,21 +1,19 @@
-<div class="root">
-  <span><%= link_to "<", blogs_path %></span>
-  <span><%= current_user.name %></span>
-</div>
-
 <%= form_with(model: @user, local: true) do |form| %>
-　<div class="prof">
-    <%= form.label :user_image %>
-    <%= form.file_field :user_image %>
-    <%= form.hidden_field :user_image_cache %>
-    <%= form.hidden_field :password, value: @user.password_digest %>
-    <p class="label"><%= form.label :氏名を編集 %></p>
-    <p><%= form.text_field :name, class: "text_field" %></p>
-    <p class="label"><%= form.label :emailを編集 %></p>
-    <p><%= form.email_field :email, class: "text_field" %>
-    <p class="label"><%= form.label :passwordを変更 %></p>
-    <p><%= form.password_field :password, class: "text_field" %></p>
-    <%= form.submit "保存", class: "button" %>
-    <br>
-  </div>
+<table class="menu", align="center">
+  <td class="menu_left"><%= link_to "<", blogs_path %></td>
+  <td class="menu_center">プロフィールの編集</td>
+  <td class="menu_right"><%= form.submit "保存する", class: "save_btn" %></td>
+</table>
+
+<div class="container" >
+  <div class="row">
+    <div>
+      <p><%= form.label :プロフィール写真 %></p>
+    　<p><%= form.file_field :user_image %></p>
+    　<p><%= form.label :氏名　 %><%= form.text_field :name, class: "prof_field" %></p>
+    　<p><%= form.label :メールアドレス　 %><%= form.email_field :email, class: "prof_field" %></p>
+    　<p><%= form.label :パスワード　 %><%= form.password_field :password, class: "prof_field" %></p>
+　　</div>
+　</div>
+</div>
 <% end %>

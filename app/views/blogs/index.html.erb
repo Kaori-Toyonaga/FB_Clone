@@ -9,6 +9,7 @@
 <div class="container" >
   <div class="row">
     <p class="user_name"><%= blog.user.name %></p>
+    <p><%= blog.user.created_at %></p>
     <p class="line-clamp"><%= blog.content %></p>
     <p class="watch"><%= link_to 'もっと見る', blog_path(blog.id) %></p>
     <p class="img"><%= image_tag(blog.image.url) if blog.image && blog.image.url %></p>
