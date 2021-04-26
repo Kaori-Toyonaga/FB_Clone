@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'blogs#top'
+  resources :contacts
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :blogs do
